@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>PulseLabs Co — WiFi AutoLogin Privacy Policy</title>
+  <style>
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial; line-height:1.6; max-width:900px; margin:40px auto; padding:0 20px; color:#111; }
+    h1 { font-size:26px; margin-bottom:6px; }
+    h2 { margin-top:20px; font-size:18px; }
+    p { margin:10px 0; color:#333; }
+    code { background:#f5f7fa; padding:2px 6px; border-radius:4px; }
+    footer { margin-top:30px; font-size:13px; color:#666; }
+  </style>
+</head>
+<body>
+  <h1>Privacy Policy — WiFi AutoLogin (PulseLabs Co)</h1>
+
+  <p>Effective date: <strong>2025-09-21</strong></p>
+
+  <p>WiFi AutoLogin (published by PulseLabs Co) helps users automatically log into captive-portal Wi-Fi networks used by hostels, colleges, and similar networks. This page explains what data the extension uses and how it is handled.</p>
+
+  <h2>What data the extension stores</h2>
+  <p>
+    If you check <strong>"Remember me"</strong> in the extension popup, your portal credentials (username and password) are stored locally in your browser's <code>chrome.storage.local</code>. These credentials are stored on your device only and are <strong>not</strong> transmitted to PulseLabs Co or any third party by the extension.
+  </p>
+
+  <h2>Permissions</h2>
+  <p>The extension requests only the following permissions, required for its functionality:</p>
+  <ul>
+    <li><strong>Host permissions</strong> for the portal host (for example: <code>http://172.16.2.1/*</code>) — used to detect and interact with the captive portal page.</li>
+    <li><strong>tabs</strong> and <strong>scripting</strong> — to open a background tab and inject the login data into the portal form.</li>
+    <li><strong>storage</strong> — to store credentials locally when you choose to remember them.</li>
+    <li><strong>alarms</strong> — to periodically check connectivity and retry login when needed.</li>
+    <li><strong>notifications</strong> — to notify you of success or failure of auto-login attempts.</li>
+  </ul>
+
+  <h2>What the extension does NOT do</h2>
+  <ul>
+    <li>It does <strong>not</strong> send any credentials or other user data to remote servers. All credential storage and login actions happen locally in the browser on your device.</li>
+    <li>It does not collect analytics, telemetry, or personally identifiable information.</li>
+  </ul>
+
+  <h2>How to remove stored credentials</h2>
+  <p>Open the extension popup and click <strong>Clear</strong> to remove saved credentials. You may also remove stored data via Chrome's Extensions → Storage UI or by uninstalling the extension.</p>
+
+  <h2>Contact</h2>
+  <p>For support or privacy questions, contact: <strong>pulselabs.team@gmail.com</strong></p>
+
+  <footer>
+    <p>PulseLabs Co — WiFi AutoLogin. This privacy policy may be updated occasionally; this page will reflect the latest version.</p>
+  </footer>
+</body>
+</html>

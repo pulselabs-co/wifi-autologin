@@ -1,0 +1,68 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>WiFi AutoLogin</title>
+  <style>
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial; width: 360px; margin:0; padding:12px; color:#111; background:#fff; }
+    h1 { font-size:18px; margin:0 0 10px; display:flex; align-items:center; gap:8px; }
+    .brand { width:28px; height:28px; border-radius:6px; display:inline-block; box-shadow:0 2px 6px rgba(0,0,0,0.15); object-fit:cover; vertical-align:middle; margin-right:8px; }
+    label { display:block; margin-top:8px; font-size:12px; color:#444; }
+    input[type="text"], input[type="password"] { width:100%; padding:8px 10px; margin-top:6px; box-sizing:border-box; border-radius:6px; border:1px solid #ddd; }
+    .row { display:flex; gap:8px; margin-top:10px; }
+    button { flex:1; padding:8px 10px; border-radius:8px; border:0; cursor:pointer; font-weight:600; }
+    #saveBtn { background:#10b981; color:#fff; }
+    #testBtn { background:#3b82f6; color:#fff; }
+    #clearBtn { background:#ef4444; color:#fff; }
+    .small { font-size:12px; color:#666; margin-top:6px; }
+    .muted { font-size:11px; color:#888; margin-top:4px; }
+    .mapper { margin-top:8px; background:#f3f4f6; padding:8px; border-radius:6px; font-size:12px; color:#333; cursor:pointer; text-align:center; }
+    .status { margin-top:8px; font-size:13px; color:#333; display:flex; align-items:center; gap:8px; }
+    .status .dot { width:10px; height:10px; border-radius:50%; background:#ddd; display:inline-block; }
+    .status.online .dot { background:#10b981; }
+    .status.offline .dot { background:#ef4444; }
+    .help { margin-top:8px; font-size:11px; color:#666; }
+  </style>
+</head>
+<body>
+  <h1><img src="icon.png" class="brand" alt="icon">WiFi AutoLogin</h1>
+
+  <label>Login URL</label>
+  <input id="loginUrl" type="text" value="http://172.16.2.1:1000">
+
+  <div style="display:flex; gap:8px;">
+    <div style="flex:1">
+      <label>Username field</label>
+      <input id="userField" type="text" value="username">
+    </div>
+    <div style="flex:1">
+      <label>Password field</label>
+      <input id="passField" type="text" value="password">
+    </div>
+  </div>
+
+  <label>Username</label>
+  <input id="username" type="text">
+
+  <label>Password</label>
+  <input id="password" type="password">
+
+  <div style="margin-top:8px;">
+    <label><input id="remember" type="checkbox"> Remember me (store credentials)</label>
+    <div class="muted">If checked, credentials will be stored locally in Chrome storage (not sent to any server). Clear anytime with Clear button.</div>
+  </div>
+
+  <div class="row">
+    <button id="saveBtn">Save</button>
+    <button id="testBtn">Test login</button>
+    <button id="clearBtn">Clear</button>
+  </div>
+
+  <div class="mapper" id="mapBtn">Auto-detect fields on current page</div>
+  <div class="status" id="status"><span class="dot"></span><span id="statusText">Status: ready</span></div>
+
+  <div class="help">Tip: use Mapper while the portal page is open to auto-fill field names if login doesn't work.</div>
+
+  <script src="popup.js"></script>
+</body>
+</html>

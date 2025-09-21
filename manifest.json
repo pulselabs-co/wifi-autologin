@@ -1,0 +1,42 @@
+{
+  "manifest_version": 3,
+  "name": "WiFi AutoLogin",
+  "version": "1.0.0",
+  "description": "Automatically log in to hostel/college captive portal (default: http://172.16.2.1:1000).",
+  "icons": {
+    "16": "icon.png",
+    "48": "icon.png",
+    "128": "icon.png"
+  },
+  "permissions": [
+    "tabs",
+    "scripting",
+    "alarms",
+    "storage",
+    "notifications",
+    "activeTab"
+  ],
+  "host_permissions": [
+    "http://172.16.2.1/*",
+    "http://172.16.2.1:1000/*",
+    "http://neverssl.com/*",
+    "http://clients3.google.com/*"
+  ],
+  "background": {
+    "service_worker": "service_worker.js"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "WiFi AutoLogin"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "http://172.16.2.1/*",
+        "http://172.16.2.1:1000/*"
+      ],
+      "js": ["watcher.js"],
+      "run_at": "document_idle"
+    }
+  ]
+}
